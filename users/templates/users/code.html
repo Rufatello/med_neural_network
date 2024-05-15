@@ -1,0 +1,37 @@
+{% extends 'appointment/base.html' %}
+{% block body %}
+    <div class="container py-5">
+        <div class="row min-vh-50 justify-content-center align-items-center">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h4 class="card-title text-center mb-4 mt-1">Введите ваш код</h4>
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input name="code" class="form-control" placeholder="Код подтверждения" type="text"
+                                           required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-secondary btn-block m-2">Подтвердить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+<footer class="fixed-bottom bg-light text-center py-3">
+    <marquee behavior="alternate" direction="right">Бегущая строка</marquee>
+    <div class="container">
+        <p class="mb-1">Сайт был создан в образовательных целях</p>
+        <p class="mb-0">&copy; 2024 - {% now 'Y' %}
+    </div>
+</footer>
+{% endblock %}
